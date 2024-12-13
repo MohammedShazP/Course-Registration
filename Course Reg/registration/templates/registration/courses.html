@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th, td {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+th, td {
+  padding: 15px;
+}
+
+button {
+  background-color: white;
+  color: black;
+  border: 1px solid #000000;
+  transition-duration: 0.4s;
+  border-radius : 5px;
+  width : 8%;
+  height : 30px;
+}
+button:hover {
+  background-color: #989897;
+  color: white;
+}
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Title</th>
+        <th style="width:50%">Description</th>
+        <th>Maximum Capacity</th>
+        <th>Current Enrolled</th>
+    </tr>
+    {% for course in courses %}
+
+    <tr>
+        <td>{{ course.title }}</td>
+        <td>{{ course.description }}</td>
+        <td style="text-align : center">{{ course.maximum_capacity }}</td>
+        <td style="text-align : center">{{ course.current_enrolled }}</td>
+
+    </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="4" style="text-align: right"><button>
+            <a href="{% url 'register' %}">Register</a>
+        </button></td>
+    </tr>
+</table>
+</body>
+</html>
