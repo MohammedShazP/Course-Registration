@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import Course, Students
 from .forms import RegisterForm
-
+from django.contrib import messages
 
 # Create your views here.
 # below is the function to load the page where all courses are listed out.
@@ -31,8 +31,14 @@ def register(request):
                     context = {"form": form}
                     entered_data.delete()
                     return render(request, "registration/register.html", context)
-            return redirect("")
+            messages.success(request,"Your registration is successfully completed.")
+            return redirect("register")
 
     form = RegisterForm()
     context = {"form": form}
     return render(request, "registration/register.html", context)
+
+def students(request):
+    students = Students.objects.all()
+    context = {'students' : students}
+    return render(request,"registration/students.html",context)

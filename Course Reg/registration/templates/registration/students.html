@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      th,
+      td {
+        border: 1px solid black;
+        border-radius: 10px;
+      }
+      th,
+      td {
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <table align="center">
+      <tr>
+        <th>SL no</th>
+        <th>Student Name</th>
+        <th>Enrolled Courses</th>
+      </tr>
+      {% if students %} {% for student in students %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ student.name }}</td>
+        <td>{% for course in student.enrolled_course.all %}
+        {{ course }}
+        {% if not forloop.last %}, {% endif %}
+        {% endfor %}</td>
+      </tr>
+      {% endfor %} {% else %}
+      <tr>
+        <td></td>
+        <td>No student registered</td>
+      </tr>
+      {% endif %}
+    </table>
+  </body>
+</html>
