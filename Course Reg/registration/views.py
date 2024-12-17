@@ -42,3 +42,19 @@ def students(request):
     students = Students.objects.all()
     context = {'students' : students}
     return render(request,"registration/students.html",context)
+
+def course_std(request, id):
+    # print("this is the id", id)
+    std_name = Course.objects.get(pk=id)
+    context = {"std_name" : std_name}
+    return render(request,"registration/course_students.html",context)
+
+def de_register(request,id):
+    std_data = Students.objects.get(id=id)
+    if std_data:
+        std_data.delete()
+    else:
+        raise f"invalid operations"
+
+
+

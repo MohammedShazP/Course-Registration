@@ -54,7 +54,7 @@
       {% for course in courses %}
 
       <tr>
-        <td>{{ course.title }}</td>
+        <td><a href="{% url 'course_std' course.id %}" >{{ course.title }}</a></td>
         <td>{{ course.description }}</td>
         <td style="text-align: center">{{ course.maximum_capacity }}</td>
         <td style="text-align: center">{{ course.current_enrolled }}</td>

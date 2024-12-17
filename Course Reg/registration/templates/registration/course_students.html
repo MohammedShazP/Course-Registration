@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table align="center">
+    <tr>
+        <th>{{std_name}}</th>
+    </tr>
+    {% for student in std_name.enrolled_course.all %}
+    <tr>
+
+        <td>{{ forloop.counter }} {{ student }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+</body>
+</html>
