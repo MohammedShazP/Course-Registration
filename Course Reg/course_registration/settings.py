@@ -54,7 +54,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'course_registration.urls'
 
-TEMPLATES_DIR = os.path.join(BASE_DIR,'templatess')
+TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 
 TEMPLATES = [
     {
@@ -121,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

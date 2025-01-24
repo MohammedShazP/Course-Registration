@@ -1,50 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Title</title>
-    <style>
-      th,
-      td {
-        border: 1px solid black;
-        border-radius: 10px;
-      }
-      th,
-      td {
-        padding: 15px;
-      }
+{% extends 'registration/base.html' %}
 
-      button {
-        background-color: white;
-        color: black;
-        border: 1px solid #000000;
-        transition-duration: 0.4s;
-        border-radius: 5px;
-        width: 8%;
-        height: 30px;
-      }
-      button:hover {
-        background-color: #989897;
-        color: white;
-      }
-    </style>
-  </head>
-  <body>
+{% block title %}Home Page {% endblock %}
 
-    <header style="text-align: right;padding-top: 5px;margin-bottom: 10px;">
-      <button style="margin: 10px;">
-        <a href="{% url 'home' %}" style="text-decoration: none; color: black; ">Courses</a>
-      </button>
-      <button style="margin-right: 10px;">
-      <a href="{% url 'students' %}" style="text-decoration: none; color: black;">Students Data
-      </a>
-    </button>
-    <button >
-      <a href="{% url 'register' %}" style="text-decoration: none; color: black;">Register</a>
-    </button>
-  </header>
-  <br>
-    <table>
+{% block content %}
+
+    <table class="home-tabl">
       <tr>
         <th>Title</th>
         <th style="width: 50%">Description</th>
@@ -61,5 +21,6 @@
       </tr>
       {% endfor %}
     </table>
-  </body>
-</html>
+
+    {% endblock %}
+

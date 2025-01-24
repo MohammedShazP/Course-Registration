@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'registration/base.html' %}
+{% block title %} Course-enrolled_students {% endblock %}
 
-
-<table align="center">
+{% block content %}
+<div class="course-student-container">
+<table class="course-students-table">
     <tr>
-        <th>{{std_name}}</th>
+        <th id="course-name" colspan="2">{{std_name}}</th>
+    </tr>
+    <tr>
+        <th>Sl no</th>
+        <th>Students Name</th>
     </tr>
     {% for student in std_name.enrolled_course.all %}
     <tr>
 
-        <td>{{ forloop.counter }} {{ student }}</td>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ student }}</td>
     </tr>
     {% endfor %}
 </table>
+</div>
 
-
-</body>
-</html>
+{% endblock %}
